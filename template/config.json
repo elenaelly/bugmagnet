@@ -78,7 +78,6 @@
       "Simple": "email@domain.com",
       "Dot in the address": "firstname.lastname@domain.com",
       "Subdomain": "email@subdomain.domain.com",
-      "Plus in address": "firstname+lastname@domain.com",
       "Numeric domain": "email@123.123.123.123",
       "Square bracket around IP address": "email@[123.123.123.123]",
       "Unnecessary quotes around address": "\"email\"@domain.com",
@@ -90,7 +89,10 @@
       "2 char TLD": "email@domain.co.jp",
       "Dash in address": "firstname-lastname@domain.com",
       "Intranet": "name@localhost",
-      "Non-ascii Email" : "nathan@学生优惠.com"
+      "Plus in address": "firstname+lastname@domain.com"
+      "Non-ascii Email" : "nathan@学生优惠.com",
+      "One-letter local-part": "x@domain.com",
+      "Local part ends with non-alphanumeric char": "user-@example.org"
     },
     "Invalid": {
       "No @ or domain": "plainaddress",
