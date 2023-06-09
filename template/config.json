@@ -321,13 +321,45 @@
     "Just whitespace": "\t \t\n \n "
   },
   "Format exploits": {
-    "SQL Injection": "Robert'); DROP TABLE Students;--",
+    "SQL Injection": [
+      "Robert'); DROP TABLE Students;--",
+      "1;DROP TABLE users",
+      "1'; DROP TABLE users-- 1",
+      "' OR 1=1 -- 1",
+      "' OR '1'='1"
+      ]
     "JS Script Injection": "Nice site,  I think I'll take it. <script>alert('Executing JS')</script>",
     "JS String (XSS) Injection - single quote": "'-prompt()-'",
     "JS String (XSS) Injection - double quote": "\"-prompt()-\"",
     "HTML parsing": "<blink>Hello there</blink>",
     "Broken HTML": "<i><b>Bold</i></b>"
-  },
+    "Basic": [
+      "<script>alert(123)</script>",
+      "&lt;script&gt;alert(&#39;123&#39;);&lt;/script&gt;",
+      "<img src=x onerror=alert(123) />",
+      "<svg><script>123<1>alert(123)</script>",
+      "\"><script>alert(123)</script>",
+      "'><script>alert(123)</script>",
+      "><script>alert(123)</script>",
+      "</script><script>alert(123)</script>",
+      "< / script >< script >alert(123)< / script >",
+      " onfocus=JaVaSCript:alert(123) autofocus",
+      "\" onfocus=JaVaSCript:alert(123) autofocus",
+      "' onfocus=JaVaSCript:alert(123) autofocus",
+      "＜script＞alert(123)＜/script＞",
+      "<sc<script>ript>alert(123)</sc</script>ript>",
+      "--><script>alert(123)</script>",
+      "\";alert(123);t=\"",
+      "';alert(123);t='",
+      "JavaSCript:alert(123)",
+      ";alert(123);",
+      "src=JaVaSCript:prompt(132)",
+      "\"><script>alert(123);</script x=\"",
+      "'><script>alert(123);</script x='",
+      "><script>alert(123);</script x=",
+      "\" autofocus onkeyup=\"javascript:alert(123)",
+      "' autofocus onkeyup='javascript:alert(123)"
+    ],
   "Unicode": {
     "Direction": {
       "Right-to-left override": "1234\u202E1234",
