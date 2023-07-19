@@ -2,9 +2,11 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>BugMagnet Extension Options</title>
+  <title>Настройки расширения BugMagnet</title>
   <style>
-		body: { padding: 10px;  }
+		.body { 
+			padding: 10px;  
+		}
 		.file-selector {
 			display: none;
 		}
@@ -59,30 +61,30 @@
 		<div role="main-screen">
 			<div>
 				<form action="#">
-				<label><input type="checkbox" role="option-skipStandard"> Hide standard menus</label>
+				<label><input type="checkbox" role="option-skipStandard">Скрыть стандартные меню</label>
 				</form>
 			</div>
 			<div>
 				<form action="#">
-					<button role="add">Add Configuration File</button>
-					<button role="close">Close</button>
+					<button role="add">Добавить файл конфигурации</button>
+					<button role="close">Закрыть</button>
 				</form>
 			</div>
 			<div role="no-custom">
-				There are no custom configuration files loaded.
+				Кастомные файлы конфигурации не загружены.
 			</div>
 			<div role="yes-custom">
-				Custom configuration files currently loaded:
+				Кастомные файлы конфигурации загружены:
 				<div class="container">
 					<table>
 						<thead>
-							<tr><th>Name</th><th>Source</th><th></th></tr>
+							<tr><th>Имя</th><th>Источник</th><th></th></tr>
 						</thead>
 						<tbody>
 							<tr role="template">
 								<td role="name"></td>
 								<td role="source" class="sourceCell"></td>
-								<td><button role="remove">Remove</button></td>
+								<td><button role="remove">Удалить</button></td>
 							</tr>
 						</tbody>
 					</table>
@@ -95,27 +97,27 @@
 				<input type="radio" value="remote" name="source" id="sourceRemote"><label for="sourceRemote">Remote URL</label>
 				<input type="radio" value="source" name="source" id="sourceConfig"><label for="sourceConfig">Paste configuration</label>
 				<div>
-				<label>Descriptive submenu label (required): <input type="text" role="submenu-name" required="true" /></label>
+				<label>Описание под-меню (требуется): <input type="text" role="submenu-name" required="true" /></label>
 				</div>
 				<div class="tab" role="local-file">
 					<button role="select-file-cover" class="select-file-cover">
-						Select File
+						Выбрать файл
 					</button>
-					<button role="back">Cancel</button>
+					<button role="back">Отмена</button>
 					<input type="file" role="file-selector" class="file-selector"/>						
 				</div>
 				<div class="tab" role="text-config">
 					<textarea role="custom-config-text" placeholder="paste configuration JSON"></textarea>
 					<div>
-						<button role="add-custom-config">Save</button>
-						<button role="back">Cancel</button>
+						<button role="add-custom-config">Сохранить</button>
+						<button role="back">Отмена</button>
 					</div>
 				</div>
 				<div class="tab" role="remote-config">
 					URL: <input role="remote-config-url" placeholder="JSON file URL"/>
 					<div>
-						<button role="add-remote-config">Load</button>
-						<button role="back">Cancel</button>
+						<button role="add-remote-config">Загрузить</button>
+						<button role="back">Отмена</button>
 					</div>
 				</div>
 			</form>

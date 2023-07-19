@@ -31,7 +31,7 @@ module.exports = function ContextMenu(standardConfig, browserInterface, menuBuil
 			return browserInterface.requestPermissions(['clipboardRead', 'clipboardWrite'])
 				.then(() => handlerType = 'paste')
 				.catch(() => {
-					browserInterface.showMessage('Could not access clipboard');
+					browserInterface.showMessage('Нет доступа к буфферу обмена');
 					menuBuilder.selectChoice(handlerMenus.injectValue);
 				});
 		},
@@ -54,13 +54,13 @@ module.exports = function ContextMenu(standardConfig, browserInterface, menuBuil
 		addGenericMenus = function (rootMenu) {
 			menuBuilder.separator(rootMenu);
 			if (pasteSupported) {
-				const modeMenu = menuBuilder.subMenu('Operational mode', rootMenu);
-				handlerMenus.injectValue = menuBuilder.choice('Inject value', modeMenu, turnOffPasting, true);
-				handlerMenus.paste = menuBuilder.choice('Simulate pasting', modeMenu, turnOnPasting);
-				handlerMenus.copy = menuBuilder.choice('Copy to clipboard', modeMenu, turnOnCopy);
+				const modeMenu = menuBuilder.subMenu('Способ', rootMenu);
+				handlerMenus.injectValue = menuBuilder.choice('Инъекция', modeMenu, turnOffPasting, true);
+				handlerMenus.paste = menuBuilder.choice('Симулировать вставку', modeMenu, turnOnPasting);
+				handlerMenus.copy = menuBuilder.choice('Копировать в буффер', modeMenu, turnOnCopy);
 			}
-			menuBuilder.menuItem('Customise menus', rootMenu, browserInterface.openSettings);
-			menuBuilder.menuItem('Help/Support', rootMenu, () => browserInterface.openUrl('https://bugmagnet.org/contributing.html'));
+			menuBuilder.menuItem('Изменить меню', rootMenu, browserInterface.openSettings);
+			menuBuilder.menuItem('Помощь', rootMenu, () => browserInterface.openUrl('https://bugmagnet.org/contributing.html'));
 		},
 		rebuildMenu = function (options) {
 			const rootMenu =  menuBuilder.rootMenu('Bug Magnet'),

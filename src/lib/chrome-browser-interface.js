@@ -31,7 +31,7 @@ module.exports = function ChromeBrowserInterface(chrome) {
 			if (response.ok) {
 				return response.text();
 			}
-			throw new Error('Network error reading the remote URL');
+			throw new Error('Ошибка при чтении удаленного URL');
 		});
 	};
 	self.closeWindow = function () {
